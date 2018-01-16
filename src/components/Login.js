@@ -1,7 +1,8 @@
 import React from 'react';
-
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Link } from 'react-router-dom';
 const FormItem = Form.Item;
+
 
 class NormalLoginForm extends React.Component {
     handleSubmit = (e) => {
@@ -31,17 +32,10 @@ class NormalLoginForm extends React.Component {
                     )}
                 </FormItem>
                 <FormItem>
-                    {getFieldDecorator('remember', {
-                        valuePropName: 'checked',
-                        initialValue: true,
-                    })(
-                        <Checkbox>Remember me</Checkbox>
-                    )}
-                    <a className="login-form-forgot" href="">Forgot password</a>
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
-                    Or <a href="">register now!</a>
+                    Or < Link to ="register">register now!</Link>
                 </FormItem>
             </Form>
         );
